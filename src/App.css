@@ -1,4 +1,55 @@
 * {
   margin: 0;
   padding: 0;
+  color: #5899a7;
+}
+
+/* Components */
+.menu {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  background-color: white;
+  opacity: 0.75;
+}
+
+.menu ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.menu li {
+  padding: 0 15px;
+}
+
+.menu li:hover {
+  color: #e29d42;
+}
+
+.menu img {
+  height: 75px;
+}
+
+.menu-options {
+  padding: 0px 30px;
+}
+
+.reservation {
+  color: #e29d42;
+  border-radius: 4px;
+  padding: 10px;
+}
+.reservation:hover {
+  color: #616161 !important;
+}
+
+/* Pages */
+.home {
+  background: url(./media/junte-os-seus-amigos.jpeg) no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
