@@ -1,29 +1,24 @@
 * {
   margin: 0;
   padding: 0;
-  color: #5899a7;
+  color: white;
 }
 
 /* Components */
-.menu {
+.menu,
+.modal-menu,
+.menu-options,
+.menu-options .menu-selector {
   display: flex;
+}
+.menu {
   position: fixed;
   width: 100%;
   align-items: center;
   padding: 10px;
   justify-content: space-between;
   text-transform: uppercase;
-  background-color: white;
-  opacity: 0.75;
-}
-
-.menu ul {
-  list-style-type: none;
-  display: flex;
-}
-
-.menu li {
-  padding: 0 15px;
+  background-color: transparent;
 }
 
 .menu li:hover {
@@ -34,22 +29,143 @@
   height: 75px;
 }
 
-.menu-options {
-  padding: 0px 30px;
-}
-
 .reservation {
   color: #e29d42;
-  border-radius: 4px;
-  padding: 10px;
 }
-.reservation:hover {
+.underline:hover {
+  color: rgb(88, 153, 167) !important;
+}
+
+#reservation:hover {
   color: #616161 !important;
 }
 
+.logo {
+  background-color: white;
+  border-radius: 50%;
+}
+.menu-opener {
+  padding-right: 50px;
+}
+.modal-menu {
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+  display: relative;
+}
+.animation {
+  animation-name: entrance;
+  animation-duration: 1s;
+}
+.no-animation {
+  animation-name: exit;
+  animation-duration: 1s;
+}
+.menu-video {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+.menu-options {
+  width: 50%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.menu-options .menu-selector {
+  position: relative;
+  z-index: 2;
+}
+.menu-options::before {
+  content: "";
+  position: absolute;
+  background-image: url(./media/espetada.png);
+
+  background-size: cover;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.8;
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+}
+
+.menu-options .menu-selector {
+  flex-direction: column;
+  align-items: baseline;
+  font-size: 3rem;
+}
+
+.underline {
+  text-decoration: none;
+}
+
+.social {
+  width: 35px;
+  fill: black;
+}
+
+.social:hover {
+  zoom: 1.5;
+}
+
+.social-media {
+  position: absolute;
+  bottom: 250px;
+}
+
+.social-media a {
+  padding: 20px;
+}
+.address {
+  position: absolute;
+  font-size: 20px;
+  bottom: 100px;
+}
+.address a {
+  text-decoration: none;
+  color: white;
+}
+@keyframes entrance {
+  from {
+    left: -4000px;
+  }
+  to {
+    left: 0px;
+  }
+}
+
+@keyframes exit {
+  from {
+    left: 0;
+  }
+  to {
+    left: 4000px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .menu-video {
+    display: none;
+  }
+
+  .menu-options {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1001px) {
+}
 /* Pages */
 .home {
-  background: url(./media/junte-os-seus-amigos.jpeg) no-repeat;
+  background: url(./media/hero-img.png) no-repeat;
   background-size: cover;
   height: 100vh;
 }

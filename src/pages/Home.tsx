@@ -1,7 +1,7 @@
-import React from "react";
+import React, { FC } from "react";
 import Menu from "../components/Menu";
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <div className="home">
       <Menu />
