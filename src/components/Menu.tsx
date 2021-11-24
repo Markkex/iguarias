@@ -9,6 +9,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import tripadvisor from "../media/Orion_tripadvisor.svg";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+
 const Menu: FC = () => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -42,7 +43,7 @@ const Menu: FC = () => {
           <Box className="modal-menu">
             <div className="menu-video">
               <video autoPlay muted loop id="my-video">
-                <source src={video} type="video/mp4"></source>
+                <source src={video} type="video/mp4" />
               </video>
             </div>
             <div className="menu-options">
@@ -52,20 +53,38 @@ const Menu: FC = () => {
                 </Button>
               </div>
               <div className="menu-selector">
-                <Link to="/about" className="underline">
+                <Link to="/" className="underline" onClick={handleClose}>
+                  Home
+                </Link>
+                <Link to="/about" className="underline" onClick={handleClose}>
                   About
                 </Link>
-                <Link to="menus" className="underline">
+                <Link to="menus" className="underline" onClick={handleClose}>
                   Menus
                 </Link>
-                <Link to="hours&location" className="underline">
+                <Link
+                  to="hours&location"
+                  className="underline"
+                  onClick={handleClose}
+                >
                   Hours & Location
                 </Link>
-                <Link to="reservations" className="underline reservation">
+                <Link
+                  to="reservations"
+                  className="underline reservation"
+                  onClick={handleClose}
+                >
                   Reservations
                 </Link>
               </div>
               <div className="social-media">
+                <a href="tel:+351 932 520 144">
+                  <LocalPhoneIcon
+                    className="social"
+                    fontSize="large"
+                    style={{ fill: "white" }}
+                  />
+                </a>
                 <a
                   href="https://www.instagram.com/iguariasdavila/"
                   target="_blank"
@@ -95,15 +114,13 @@ const Menu: FC = () => {
                 >
                   <img src={tripadvisor} alt="logo" className="social" />
                 </a>
-                <a href="tel:+351 932 520 144">
-                  <LocalPhoneIcon
-                    className="social"
-                    style={{ fill: "white" }}
-                  />
-                </a>
               </div>
               <div className="address">
-                <a href="https://www.google.com/maps/dir//iguarias+da+vila/@37.0548381,-7.7482457,17.5z/data=!4m8!4m7!1m0!1m5!1m1!1s0xd10013b15ecc349:0xbaa24384b014ab85!2m2!1d-7.7465802!2d37.0554329">
+                <a
+                  href="https://www.google.com/maps/place/Iguarias+da+Vila/@37.0554067,-7.7488342,17z/data=!3m1!4b1!4m5!3m4!1s0xd10013b15ecc349:0xbaa24384b014ab85!8m2!3d37.0554329!4d-7.7465802"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Iguarias da Vila
                   <br />
                   Praça da República 5
