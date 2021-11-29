@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import emailjs from "emailjs-com";
+import { DatePicker, LocalizationProvider } from "@mui/lab";
+import AdapterDateFns from "@mui/lab/AdapterDateFns";
+import TimePicker from "@mui/lab/TimePicker";
 
 const HomeReservation = () => {
-  const [date, setDate] = useState("");
-  const [hours, setHours] = useState("");
+  const [date, setDate] = useState(null);
+  const [hours, setHours] = useState<Date | number | null>(Date.now());
   const [seats, setSeats] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
@@ -13,9 +16,13 @@ const HomeReservation = () => {
 
   const request = (e: any) => {
     e.preventDefault();
-
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_USER_ID")
+      .sendForm(
+        "service_kg3dj7f",
+        "template_x8wrl8w",
+        e.target,
+        "user_zyIcfYksaJu9L0t7MGJJA"
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -25,8 +32,8 @@ const HomeReservation = () => {
         }
       );
 
-    setDate("");
-    setHours("");
+    setDate(null);
+    setHours(Date.now());
     setSeats("");
     setName("");
     setPhone("");
@@ -42,52 +49,54 @@ const HomeReservation = () => {
         </div>
         <div className="home-form">
           <form onSubmit={request} className="home-form">
-            <input
-              className="input"
-              value={date}
-              name="date"
-              onChange={(e) => {
-                setDate(e.target.value);
-              }}
-              placeholder="date"
-            />
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="Date"
+                value={date}
+                onChange={(newValue) => {
+                  setDate(newValue);
+                }}
+                renderInput={(params) => <TextField {...params} name="date" />}
+              />
+
+              <br />
+              <br />
+              <TimePicker
+                label="Hours"
+                value={hours}
+                onChange={setHours}
+                renderInput={(params) => <TextField {...params} name="hours" />}
+              />
+            </LocalizationProvider>
             <br />
             <br />
-            <input
-              className="input"
-              value={hours}
-              name="hours"
-              onChange={(e) => {
-                setHours(e.target.value);
-              }}
-              placeholder="hours"
-            />
-            <br />
-            <br />
-            <input
+            <TextField
+              variant="outlined"
+              label="Seats"
               value={seats}
               name="seats"
               onChange={(e) => {
                 setSeats(e.target.value);
               }}
-              placeholder="seats"
               className="input"
             />
             <br />
             <br />
-            <input
-              placeholder="name"
+            <TextField
+              variant="outlined"
+              label="Name"
               className="input"
               value={name}
-              name="name"
+              name="Name"
               onChange={(e) => {
                 setName(e.target.value);
               }}
             />
             <br />
             <br />
-            <input
-              placeholder="Phone Number"
+            <TextField
+              variant="outlined"
+              label="Phone"
               className="input"
               value={phone}
               name="phone"
@@ -97,8 +106,9 @@ const HomeReservation = () => {
             />
             <br />
             <br />
-            <input
-              placeholder="email"
+            <TextField
+              variant="outlined"
+              label="E-mail"
               className="input"
               value={email}
               name="email"
@@ -108,8 +118,9 @@ const HomeReservation = () => {
             />
             <br />
             <br />
-            <textarea
-              placeholder="notes"
+            <TextField
+              variant="outlined"
+              label="Notes"
               className="input"
               value={notes}
               name="notes"
@@ -120,7 +131,7 @@ const HomeReservation = () => {
             />
             <br />
             <br />
-            <Button variant="contained" onClick={request}>
+            <Button variant="contained" type="submit">
               Reservation
             </Button>
           </form>

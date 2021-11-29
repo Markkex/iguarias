@@ -7,23 +7,29 @@ const Presentation: FC = () => {
         <img src={image} alt="drink" />
       </div>
       <div className="about-content">
-        Iguarias da Vila is located in Fuzeta where is home to many fisherman.
+        <p>
+          Iguarias da Vila is located in Fuzeta where is home to many fisherman.
+        </p>
         <br />
+        <p>
+          Our dishes are inspired on Mediterranic, European and Portuguese food
+          where we also have option for vegan enthusiasts.
+        </p>
         <br />
-        Our dishes are inspired on Mediterranic, European and Portuguese food
-        where we also have option for vegan enthusiasts.
+        <p>
+          Our food is prepared daily with the highest quality to ensure that
+          freshest meals are delivered to our customers.
+        </p>
         <br />
+        <p>
+          Located in the historic plaza of fuzeta it welcomes many visitors
+          during the whole year.
+        </p>
         <br />
-        Our food is prepared daily with the highest quality to ensure that
-        freshest meals are delivered to our customers.
-        <br />
-        <br />
-        Located in the historic plaza of fuzeta it welcomes many visitors during
-        the whole year.
-        <br />
-        <br />
-        It's architectonic design resembles the typical housing during the late
-        50's is an ode to Fuzeta.
+        <p>
+          It's architectonic design resembles the typical housing during the
+          late 50's is an ode to Fuzeta.
+        </p>
         <br />
         <br />
       </div>
