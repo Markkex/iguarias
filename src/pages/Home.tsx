@@ -1,4 +1,5 @@
 import React, { FC, Fragment } from "react";
+import FoodMenu from "../components/FoodMenu";
 import Footer from "../components/Footer";
 import HomeReservation from "../components/HomeReservation";
 import Location from "../components/Location";
@@ -14,6 +15,7 @@ const Home: FC = () => {
         <div className="about-section">
           <Presentation />
         </div>
+        <FoodMenu />
         <HomeReservation />
         <Location />
         <Footer />
