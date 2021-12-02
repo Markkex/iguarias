@@ -5,6 +5,7 @@ import HomeReservation from "../components/HomeReservation";
 import Location from "../components/Location";
 import Menu from "../components/Menu";
 import Presentation from "../components/Presentation";
+
 const Home: FC = () => {
   return (
     <Fragment>
@@ -12,12 +13,12 @@ const Home: FC = () => {
         <div className="heading">
           <Menu />
         </div>
-        <div className="about-section">
+        <div className="about-section" id="about">
           <Presentation />
         </div>
         <FoodMenu />
-        <HomeReservation />
         <Location />
+        <HomeReservation />
         <Footer />
       </div>
     </Fragment>

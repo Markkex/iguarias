@@ -13,36 +13,51 @@ const HomeReservation = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [notes, setNotes] = useState("");
-
+  const success = true;
   const request = (e: any) => {
     e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_kg3dj7f",
-        "template_x8wrl8w",
-        e.target,
-        "user_zyIcfYksaJu9L0t7MGJJA"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
 
-    setDate(null);
-    setHours(Date.now());
-    setSeats("");
-    setName("");
-    setPhone("");
-    setEmail("");
-    setNotes("");
+    if (
+      date === null &&
+      seats === "" &&
+      name === "" &&
+      phone === "" &&
+      email === ""
+    ) {
+      alert("You need to complete all fields to validate your reservation.");
+    } else {
+      emailjs
+        .sendForm(
+          "service_kg3dj7f",
+          "template_x8wrl8w",
+          e.target,
+          "user_zyIcfYksaJu9L0t7MGJJA"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+
+      setDate(null);
+      setHours(Date.now());
+      setSeats("");
+      setName("");
+      setPhone("");
+      setEmail("");
+      setNotes("");
+
+      alert(
+        "In a few minutes you will receive a message confirming your reservation."
+      );
+    }
   };
 
   return (
-    <div className="home-reservation">
+    <div className="home-reservation" id="reservations">
       <div className="home-reservation-content">
         <div className="reservation-title">
           <h1>RESERVATIONS</h1>
@@ -70,9 +85,8 @@ const HomeReservation = () => {
             </LocalizationProvider>
             <br />
             <br />
-            <TextField
-              variant="outlined"
-              label="Seats"
+            <input
+              placeholder="Seats"
               value={seats}
               name="seats"
               onChange={(e) => {
@@ -82,9 +96,8 @@ const HomeReservation = () => {
             />
             <br />
             <br />
-            <TextField
-              variant="outlined"
-              label="Name"
+            <input
+              placeholder="Name"
               className="input"
               value={name}
               name="Name"
@@ -94,9 +107,8 @@ const HomeReservation = () => {
             />
             <br />
             <br />
-            <TextField
-              variant="outlined"
-              label="Phone"
+            <input
+              placeholder="Phone"
               className="input"
               value={phone}
               name="phone"
@@ -106,9 +118,8 @@ const HomeReservation = () => {
             />
             <br />
             <br />
-            <TextField
-              variant="outlined"
-              label="E-mail"
+            <input
+              placeholder="E-mail"
               className="input"
               value={email}
               name="email"
@@ -118,16 +129,14 @@ const HomeReservation = () => {
             />
             <br />
             <br />
-            <TextField
-              variant="outlined"
-              label="Notes"
+            <input
+              placeholder="Notes"
               className="input"
               value={notes}
               name="notes"
               onChange={(e) => {
                 setNotes(e.target.value);
               }}
-              rows={4}
             />
             <br />
             <br />
