@@ -13,7 +13,7 @@ const Home: FC = () => {
         <div className="heading">
           <Menu />
         </div>
-        <div className="about-section" id="about">
+        <div className="about-section">
           <Presentation />
         </div>
         <FoodMenu />

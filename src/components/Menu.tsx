@@ -40,7 +40,11 @@ const Menu: FC = () => {
                   <a href="#" className="underline" onClick={handleClose}>
                     Home
                   </a>
-                  <a href="#about" className="underline" onClick={handleClose}>
+                  <a
+                    href="#about-section"
+                    className="underline"
+                    onClick={handleClose}
+                  >
                     About
                   </a>
                   <a href="#menu" className="underline" onClick={handleClose}>

@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import image from "../media/bebida.PNG";
 const Presentation: FC = () => {
   return (
-    <div className="presentation">
+    <div className="presentation" id="about-section">
       <div className="about-image">
         <img src={image} alt="drink" />
       </div>

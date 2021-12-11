@@ -18,10 +18,10 @@ const HomeReservation = () => {
     e.preventDefault();
 
     if (
-      date === null &&
-      seats === "" &&
-      name === "" &&
-      phone === "" &&
+      date === null ||
+      seats === "" ||
+      name === "" ||
+      phone === "" ||
       email === ""
     ) {
       alert("You need to complete all fields to validate your reservation.");
@@ -141,7 +141,7 @@ const HomeReservation = () => {
             <br />
             <br />
             <Button variant="contained" type="submit">
-              Reservation
+              Submit
             </Button>
           </form>
         </div>

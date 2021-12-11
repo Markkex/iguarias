@@ -12,6 +12,7 @@ const FoodMenu = () => {
         "https://www.economist.com/sites/default/files/images/2021/09/articles/main/20210918_stp504.jpg",
     },
   ];
+
   const length = sliderData.length;
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
