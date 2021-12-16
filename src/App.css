@@ -374,9 +374,13 @@ svg:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 50%;
   order: 1;
-  height: 400px;
   overflow: hidden;
+}
+
+#my-video {
+  max-width: 100%;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -431,9 +435,6 @@ svg:hover {
     padding-bottom: 30px;
   }
 
-  #my-video {
-    max-width: 100%;
-  }
   .foodmenu {
     display: flex;
     flex-direction: column;
@@ -447,7 +448,7 @@ svg:hover {
     order: 1;
   }
   #my-video {
-    height: 300px;
+    max-width: 100%;
   }
 
   .hours {
